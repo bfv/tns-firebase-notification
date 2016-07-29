@@ -4,4 +4,9 @@ import {Component} from "@angular/core";
     selector: "notification-app",
     templateUrl: "app.component.html",
 })
-export class AppComponent {}
+export class AppComponent {
+
+    public initFirebase() {
+        console.log("init firebase");
+    }
+}
