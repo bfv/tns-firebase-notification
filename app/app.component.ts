@@ -1,4 +1,5 @@
 import {Component} from "@angular/core";
+import firebase = require("nativescript-plugin-firebase");
 
 @Component({
     selector: "notification-app",
@@ -7,6 +8,14 @@ import {Component} from "@angular/core";
 export class AppComponent {
 
     public initFirebase() {
-        console.log("init firebase");
+        
+        console.log("initFirebase()");
+
+        firebase.init({
+            //
+        }).then(
+            instance => { console.log("firebase.init() done"); },
+            error => { console.log("firebase.init() error: " + error); }
+        );
     }
 }
