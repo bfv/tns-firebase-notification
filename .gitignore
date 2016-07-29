@@ -3,6 +3,7 @@ platforms/*
 !platforms/android
 platforms/android/*
 !platforms/android/build.gradle
+!platforms/android/include.gradle
 
 /node_modules/
 /app/**/*.js
