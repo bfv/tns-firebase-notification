@@ -17,6 +17,7 @@ export class AppComponent {
             instance => { 
                 console.log("firebase.init() done"); 
                 this.initPushToken();
+                this.initMessaging();
             },
             error => { console.log("firebase.init() error: " + error); }
         );
@@ -29,5 +30,16 @@ export class AppComponent {
         firebase.addOnPushTokenReceivedCallback(
             token => { console.log("push token: " + token); }
         );
+    }
+
+    private initMessaging() {
+        
+        console.log("initMessaging()");
+
+        firebase.addOnMessageReceivedCallback(
+            message => {
+                console.log("message received: " + JSON.stringify(message));
+            }
+        )
     }
 }
